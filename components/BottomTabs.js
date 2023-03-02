@@ -13,35 +13,34 @@ const Stack = createStackNavigator();
 
 function StackNavigator({ route }) {
 	return (
-		<Stack.Navigator initialRouteName='Home'>
+		<Stack.Navigator
+			initialRouteName='Home'
+			screenOptions={{
+				headerShown: false,
+			}}>
 			<Stack.Screen
 				name='Feeds'
 				component={FeedsScreen}
-				options={{ headerShown: false }}
 				initialParams={route.params}
 			/>
 			<Stack.Screen
 				name='Comments'
 				component={Comments}
-				options={{ headerShown: true }}
 				initialParams={route.params}
 			/>
 			<Stack.Screen
 				name='CreateFeed'
 				component={CreateFeedScreen}
-				options={{ headerShown: true }}
 				initialParams={route.params}
 			/>
 			<Stack.Screen
 				name='ShareFeed'
 				component={ShareFeedScreen}
-				options={{ headerShown: true }}
 				initialParams={route.params}
 			/>
 			<Stack.Screen
 				name='UpdateProfileImage'
 				component={UpdateProfileImageScreen}
-				options={{ headerShown: false }}
 				initialParams={route.params}
 			/>
 		</Stack.Navigator>
